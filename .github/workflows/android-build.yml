@@ -33,8 +33,14 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
+    - name: Check dist folder
+      run: |
+        ls -la dist/
+        echo "---"
+        cat capacitor.config.ts
+
     - name: Sync Capacitor
-      run: npx cap sync android
+      run: npx --yes cap sync android --verbose
 
     - name: Build Debug APK
       run: |
