@@ -1,0 +1,11 @@
+t.displayName = "nginx";
+t.aliases = [];
+function t(n) {
+  (function(r) {
+    var e = /\$(?:\w[a-z\d]*(?:_[^\x00-\x1F\s"'\\()$]*)?|\{[^}\s"'\\]+\})/i;
+    r.languages.nginx = { comment: { pattern: /(^|[\s{};])#.*/, lookbehind: true, greedy: true }, directive: { pattern: /(^|\s)\w(?:[^;{}"'\\\s]|\\.|"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|\s+(?:#.*(?!.)|(?![#\s])))*?(?=\s*[;{])/, lookbehind: true, greedy: true, inside: { string: { pattern: /((?:^|[^\\])(?:\\\\)*)(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')/, lookbehind: true, greedy: true, inside: { escape: { pattern: /\\["'\\nrt]/, alias: "entity" }, variable: e } }, comment: { pattern: /(\s)#.*/, lookbehind: true, greedy: true }, keyword: { pattern: /^\S+/, greedy: true }, boolean: { pattern: /(\s)(?:off|on)(?!\S)/, lookbehind: true }, number: { pattern: /(\s)\d+[a-z]*(?!\S)/i, lookbehind: true }, variable: e } }, punctuation: /[{};]/ };
+  })(n);
+}
+export {
+  t as default
+};

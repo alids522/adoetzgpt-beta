@@ -1,0 +1,9 @@
+import e from "./yaml-JfT7KDqq.js";
+t.displayName = "tap";
+t.aliases = [];
+function t(a) {
+  a.register(e), a.languages.tap = { fail: /not ok[^#{\n\r]*/, pass: /ok[^#{\n\r]*/, pragma: /pragma [+-][a-z]+/, bailout: /bail out!.*/i, version: /TAP version \d+/i, plan: /\b\d+\.\.\d+(?: +#.*)?/, subtest: { pattern: /# Subtest(?:: .*)?/, greedy: true }, punctuation: /[{}]/, directive: /#.*/, yamlish: { pattern: /(^[ \t]*)---[\s\S]*?[\r\n][ \t]*\.\.\.$/m, lookbehind: true, inside: a.languages.yaml, alias: "language-yaml" } };
+}
+export {
+  t as default
+};
