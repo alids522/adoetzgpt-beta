@@ -40,7 +40,7 @@ jobs:
         cat capacitor.config.ts
 
     - name: Sync Capacitor
-      run: npx --yes cap sync android --verbose
+      run: ./node_modules/.bin/cap sync android
 
     - name: Build Debug APK
       run: |
