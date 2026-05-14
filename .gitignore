@@ -38,3 +38,4 @@ coverage/
 *.pem
 .cache/
 data/app-state.json
+.claude/

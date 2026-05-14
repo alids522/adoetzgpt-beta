@@ -33,14 +33,12 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
-    - name: Check dist folder
+    - name: Copy web assets to Android
       run: |
-        ls -la dist/
-        echo "---"
-        cat capacitor.config.ts
-
-    - name: Sync Capacitor
-      run: ./node_modules/.bin/cap sync android
+        mkdir -p android/app/src/main/assets/public
+        cp -r dist/* android/app/src/main/assets/public/
+        echo "Copied files:"
+        ls -la android/app/src/main/assets/public/
 
     - name: Build Debug APK
       run: |
