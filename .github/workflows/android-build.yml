@@ -22,12 +22,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
-
-    - name: Build web app
-      run: npm run build
-      env:
-        CI: true
+      run: npm ci --legacy-peer-deps
 
     - name: Setup Java
       uses: actions/setup-java@v4
@@ -38,8 +33,12 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
-    - name: Sync Capacitor
-      run: npx cap sync android
+    - name: Sync and build
+      run: |
+        npm run build
+        npx cap sync android
+      env:
+        NODE_OPTIONS: --max-old-space-size=4096
 
     - name: Build Debug APK
       run: |
@@ -53,3 +52,4 @@ jobs:
         name: AdoetzGPT-Beta-Debug-APK
         path: android/app/build/outputs/apk/debug/app-debug.apk
         retention-days: 30
+        if-no-files-found: error
