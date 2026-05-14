@@ -40,6 +40,9 @@ jobs:
         echo "Copied files:"
         ls -la android/app/src/main/assets/public/
 
+    - name: Make Gradle executable
+      run: chmod +x android/gradlew
+
     - name: Build Debug APK
       run: |
         cd android
