@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AdoetzGPT Beta</string>
+    <string name="title_activity_main">AdoetzGPT Beta</string>
+    <string name="package_name">com.adoetz.gpt.beta</string>
+    <string name="custom_url_scheme">com.adoetz.gpt.beta</string>
+</resources>
