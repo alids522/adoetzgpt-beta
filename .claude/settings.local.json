@@ -5,7 +5,9 @@
       "Bash(npm run *)",
       "Bash(head -n -2 \"/Users/adoetz52/Documents/ai project/webchat new/glm/src/components/TokenUsage.tsx\")",
       "Bash(mv \"/tmp/tokenusage_temp.tsx\" \"/Users/adoetz52/Documents/ai project/webchat new/glm/src/components/TokenUsage.tsx\")",
-      "Bash(sed -i '' '$d' '/Users/adoetz52/Documents/ai project/webchat new/glm/src/components/TokenUsage.tsx')"
+      "Bash(sed -i '' '$d' '/Users/adoetz52/Documents/ai project/webchat new/glm/src/components/TokenUsage.tsx')",
+      "Bash(curl *)",
+      "Bash(gunzip)"
     ]
   }
 }
